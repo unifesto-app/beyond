@@ -27,6 +27,9 @@ const agrandirGrandHeavy = localFont({
 export const metadata: Metadata = {
   title: "Beyond - Unifesto",
   description: "Dream. Build. Launch. India's premier student innovation ecosystem.",
+  icons: {
+    icon: "/Beyond-Icon.png",
+  },
 };
 
 export default function RootLayout({
