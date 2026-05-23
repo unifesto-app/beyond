@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { brandGradient } from "@/lib/styles";
 import Image from "next/image";
-import BeyondLogo from "@/app/assets/svg/Beyond.svg";
+import BeyondLogo from "@/app/assets/images/Beyond.png";
 
 type NavItem = {
   label: string;
@@ -147,23 +147,41 @@ export default function Navbar() {
     const getScrollY = () =>
       window.scrollY ?? window.pageYOffset ?? document.documentElement.scrollTop ?? 0;
     const handleScroll = () => setScrolled(getScrollY() > 24);
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false);
+      }
+    };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     document.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [menuOpen]);
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-        ? "bg-white/10 backdrop-blur-lg border-b border-zinc-200 shadow-sm"
-        : "bg-white/10 backdrop-blur-sm"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${scrolled || menuOpen
+        ? "bg-white border-b border-zinc-200 shadow-sm"
+        : "bg-white/80 backdrop-blur-md"
+        } ${menuOpen ? "h-screen overflow-y-auto" : ""}`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
         <nav className="flex items-center justify-between h-20 md:h-24" aria-label="Primary navigation">
 
           {/* Logo */}

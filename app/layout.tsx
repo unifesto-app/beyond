@@ -32,6 +32,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -42,7 +48,7 @@ export default function RootLayout({
       lang="en"
       className={`${agrandir.variable} ${agrandirGrandLight.variable} ${agrandirGrandHeavy.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col w-full">
         <Navbar />
         {children}
       </body>

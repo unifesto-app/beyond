@@ -1,37 +1,41 @@
 export default function Footer() {
   return (
-    <footer className="bg-white">
+    <footer className="bg-white relative pt-8 w-full">
       {/* Top gradient line */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px pointer-events-none"
+        className="absolute top-0 left-0 right-0 h-px w-full"
         style={{ background: "linear-gradient(90deg, transparent, #3491ff, transparent)" }}
       />
       
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
-        {/* Newsletter strip */}
-        <div className="border-b border-zinc-200 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div>
-            <p className="text-base font-semibold text-zinc-900">Stay in the loop</p>
-            <p className="text-xs text-zinc-600 mt-0.5">Get the latest updates on events, workshops, and opportunities.</p>
+      {/* Newsletter strip */}
+      <div className="w-full border-b border-zinc-200">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-6 md:py-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <p className="text-base font-semibold text-zinc-900">Stay in the loop</p>
+              <p className="text-xs text-zinc-600 mt-0.5">Get the latest updates on events, workshops, and opportunities.</p>
+            </div>
+            <form className="flex items-center gap-2 w-full md:w-auto">
+              <input
+                type="email"
+                placeholder="your@email.com"
+                required
+                className="flex-1 md:w-64 bg-zinc-50 border border-zinc-300 rounded-full px-4 py-2 text-sm text-zinc-900 placeholder-zinc-500 outline-none hover:border-zinc-400 focus:border-[#3491ff] focus:bg-white transition-colors duration-200"
+              />
+              <button
+                type="submit"
+                className="rounded-full px-5 py-2 text-sm font-semibold text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(52,145,255,0.4)] whitespace-nowrap"
+                style={{ background: "linear-gradient(135deg, #3491ff, #0062ff)" }}
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
-          <form className="flex items-center gap-2 w-full md:w-auto">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              required
-              className="flex-1 md:w-64 bg-zinc-50 border border-zinc-300 rounded-full px-4 py-2 text-sm text-zinc-900 placeholder-zinc-500 outline-none hover:border-zinc-400 focus:border-[#3491ff] focus:bg-white transition-colors duration-200"
-            />
-            <button
-              type="submit"
-              className="rounded-full px-5 py-2 text-sm font-semibold text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(52,145,255,0.4)] whitespace-nowrap"
-              style={{ background: "linear-gradient(135deg, #3491ff, #0062ff)" }}
-            >
-              Subscribe
-            </button>
-          </form>
         </div>
+      </div>
 
-        {/* Main footer content */}
+      {/* Main footer content */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
         <div className="py-6 md:py-8">
           <div className="max-w-4xl mx-auto text-center space-y-4">
             {/* Brand */}
@@ -117,9 +121,11 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="py-3 border-t border-zinc-200">
+      {/* Bottom Bar */}
+      <div className="w-full border-t border-zinc-200">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-3">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3">
             <p className="text-xs tracking-[0.2em] font-semibold"
               style={{
