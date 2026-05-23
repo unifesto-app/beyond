@@ -2,10 +2,22 @@ export default function UniversitiesPage() {
   return (
     <div className="flex flex-col flex-1">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 overflow-hidden pt-32">
+      <section className="relative min-h-[60vh] flex items-center justify-center bg-white overflow-hidden pt-24 sm:pt-28 md:pt-32">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div 
+            className="absolute top-1/4 -left-48 w-96 h-96 rounded-full blur-3xl opacity-[0.15]"
+            style={{ background: "linear-gradient(to bottom, #3491ff, #0062ff)" }}
+          ></div>
+          <div 
+            className="absolute bottom-1/4 -right-48 w-96 h-96 rounded-full blur-3xl opacity-[0.15]"
+            style={{ background: "linear-gradient(to bottom, #bdadff, #8666fa)" }}
+          ></div>
+        </div>
+
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 text-center">
           <h1 
-            className="text-5xl md:text-7xl font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6"
             style={{
               background: "linear-gradient(135deg, #3491ff, #0062ff)",
               WebkitBackgroundClip: "text",
@@ -15,7 +27,7 @@ export default function UniversitiesPage() {
           >
             For Universities
           </h1>
-          <p className="text-xl md:text-2xl text-zinc-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-600 max-w-3xl mx-auto leading-relaxed px-4">
             Empower your students with India's premier innovation ecosystem
           </p>
         </div>

@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="bg-white relative pt-8 w-full">
+    <footer className="bg-white relative pt-8">
       {/* Top gradient line */}
       <div
-        className="absolute top-0 left-0 right-0 h-px w-full"
+        className="absolute top-0 left-0 right-0 h-px"
         style={{ background: "linear-gradient(90deg, transparent, #3491ff, transparent)" }}
       />
       
@@ -15,7 +15,7 @@ export default function Footer() {
               <p className="text-base font-semibold text-zinc-900">Stay in the loop</p>
               <p className="text-xs text-zinc-600 mt-0.5">Get the latest updates on events, workshops, and opportunities.</p>
             </div>
-            <form className="flex items-center gap-2 w-full md:w-auto">
+            <form className="flex items-center gap-2 md:w-auto">
               <input
                 type="email"
                 placeholder="your@email.com"
@@ -35,7 +35,7 @@ export default function Footer() {
       </div>
 
       {/* Main footer content */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="py-6 md:py-8">
           <div className="max-w-4xl mx-auto text-center space-y-4">
             {/* Brand */}

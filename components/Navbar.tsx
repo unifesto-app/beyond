@@ -17,7 +17,8 @@ const navItems: NavItem[] = [
     label: "About",
     dropdown: [
       { label: "About Beyond", href: "/about", description: "Our story & mission" },
-      { label: "Vision & Mission", href: "/#vision-mission", description: "What drives us" },
+      { label: "Vision & Mission", href: "/about#vision-mission", description: "What drives us" },
+      { label: "Our Values", href: "/about#values", description: "Principles that guide us" },
       { label: "Timeline", href: "/#timeline", description: "8-month journey" },
     ],
   },
@@ -27,24 +28,26 @@ const navItems: NavItem[] = [
       { label: "Beyond Hackathon", href: "/hackathon", description: "Build real-world solutions" },
       { label: "Beyond Pitch Competition", href: "/pitch", description: "Launch your startup idea" },
       { label: "Workshops & Bootcamps", href: "/workshops", description: "Learn industry skills" },
-      { label: "Mentorship", href: "/mentorship", description: "Connect with experts" },
+      { label: "Mentorship Program", href: "/mentorship", description: "Connect with experts" },
+      { label: "Event Calendar", href: "/events", description: "All upcoming events" },
     ],
   },
   {
-    label: "Journey",
+    label: "Community",
     dropdown: [
-      { label: "Hackathon Journey", href: "/hackathon#journey", description: "From idea to demo" },
-      { label: "Pitch Journey", href: "/pitch#journey", description: "From concept to pitch day" },
-      { label: "Event Calendar", href: "/events", description: "All upcoming events" },
+      { label: "For Sponsors", href: "/sponsors", description: "Partnership opportunities" },
+      { label: "For Universities", href: "/universities", description: "Institutional benefits" },
+      { label: "Our Partners", href: "/partners", description: "Ecosystem partners" },
+      { label: "Awards & Recognition", href: "/#awards", description: "Prizes & categories" },
     ],
   },
   {
     label: "Resources",
     dropdown: [
-      { label: "Awards & Recognition", href: "/#awards", description: "Prizes & categories" },
-      { label: "For Sponsors", href: "/sponsors", description: "Partnership opportunities" },
-      { label: "For Universities", href: "/universities", description: "Institutional benefits" },
       { label: "FAQ", href: "/faq", description: "Common questions" },
+      { label: "Hackathon Journey", href: "/hackathon#journey", description: "From idea to demo" },
+      { label: "Pitch Journey", href: "/pitch#journey", description: "From concept to pitch day" },
+      { label: "Contact Us", href: "#contact", description: "Get in touch" },
     ],
   },
 ];
@@ -52,7 +55,7 @@ const navItems: NavItem[] = [
 function MegaMenu({ items }: { items: NavItem[] }) {
   return (
     <div className="absolute top-full right-0 mt-4 w-[800px] max-w-[90vw] rounded-3xl border border-white/20 bg-white shadow-2xl overflow-hidden z-50 pointer-events-auto">
-      <div className="h-1 w-full" style={{ background: brandGradient }} />
+      <div className="h-1" style={{ background: brandGradient }} />
       <div className="p-8 flex flex-col">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item) => (
@@ -176,13 +179,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${scrolled || menuOpen
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || menuOpen
         ? "bg-white border-b border-zinc-200 shadow-sm"
         : "bg-white/80 backdrop-blur-md"
         } ${menuOpen ? "h-screen overflow-y-auto" : ""}`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
-        <nav className="flex items-center justify-between h-20 md:h-24" aria-label="Primary navigation">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
+        <nav className="flex items-center justify-between h-16 md:h-20" aria-label="Primary navigation">
 
           {/* Logo */}
           <a href="/" aria-label="Beyond home" className="flex items-center group">
@@ -223,7 +226,7 @@ export default function Navbar() {
           <div className="md:hidden pb-4 animate-fade-in-up">
             <div className="flex flex-col bg-white rounded-2xl border border-zinc-200 mt-1 overflow-hidden shadow-lg">
               {/* Gradient top accent */}
-              <div className="h-px w-full" style={{ background: brandGradient }} />
+              <div className="h-px" style={{ background: brandGradient }} />
               <div className="p-2">
                 {navItems.map((item) => (
                   <div key={item.label}>

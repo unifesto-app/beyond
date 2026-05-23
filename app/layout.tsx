@@ -48,7 +48,7 @@ export default function RootLayout({
       lang="en"
       className={`${agrandir.variable} ${agrandirGrandLight.variable} ${agrandirGrandHeavy.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col w-full">
+      <body className="min-h-full flex flex-col">
         <Navbar />
         {children}
       </body>

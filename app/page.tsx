@@ -1,12 +1,16 @@
 import Footer from "@/components/Footer";
+import Image from "next/image";
+import AppStoreBadge from "@/app/assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg";
+import GooglePlayBadge from "@/app/assets/images/GetItOnGooglePlay_Badge_Web_color_English.svg";
+import AppScreen from "@/app/assets/images/AppScreen.png";
 
 export default function Home() {
   const marqueeTexts = ["Dream. Build. Launch.", "Innovation Season 2026", "Beyond by Unifesto"];
   
   return (
-    <div className="flex flex-col flex-1 w-full">
+    <div className="flex flex-col flex-1">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden pt-8 md:pt-0 w-full">
+      <section className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden pt-8 md:pt-0">
         {/* Marquee Bar - Bottom */}
         <div className="absolute bottom-[18%] sm:bottom-[15%] rotate-3 w-[150%] sm:w-[120%] -left-[25%] sm:-left-[10%] bg-white py-3 sm:py-3 md:py-4 border-y border-zinc-200 z-0 overflow-hidden shadow-sm">
           <div className="flex whitespace-nowrap animate-marquee-reverse">
@@ -169,8 +173,8 @@ export default function Home() {
       </section>
 
       {/* Vision & Mission Section */}
-      <section className="py-16 sm:py-20 md:py-32 bg-white w-full">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
+      <section className="py-16 sm:py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="grid md:grid-cols-2 gap-10 sm:gap-12 md:gap-16">
             {/* Vision */}
             <div className="space-y-4">
@@ -214,8 +218,8 @@ export default function Home() {
       </section>
 
       {/* Programs Section */}
-      <section id="programs" className="py-16 sm:py-20 md:py-32 bg-white w-full">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
+      <section id="programs" className="py-16 sm:py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="text-center mb-12 sm:mb-16">
             <h2 
               className="text-3xl sm:text-4xl md:text-5xl font-grandh mb-4"
@@ -356,8 +360,8 @@ export default function Home() {
       </section>
 
       {/* Timeline Section */}
-      <section id="timeline" className="py-16 sm:py-20 md:py-32 bg-white w-full">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
+      <section id="timeline" className="py-16 sm:py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="text-center mb-12 sm:mb-16">
             <h2 
               className="text-3xl sm:text-4xl md:text-5xl font-grandh mb-4"
@@ -472,8 +476,8 @@ export default function Home() {
       </section>
 
       {/* Awards Section */}
-      <section id="awards" className="py-16 sm:py-20 md:py-32 bg-white w-full">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
+      <section id="awards" className="py-16 sm:py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="text-center mb-12 sm:mb-16">
             <h2 
               className="text-3xl sm:text-4xl md:text-5xl font-grandh mb-4"
@@ -617,9 +621,127 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Download Unifesto Discover App Section */}
+      <section className="py-16 sm:py-20 md:py-32 bg-gradient-to-br from-blue-50/30 to-purple-50/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <div className="relative bg-white rounded-3xl sm:rounded-[2.5rem] shadow-xl border border-zinc-200 overflow-hidden">
+            {/* Subtle background pattern */}
+            <div className="absolute inset-0 opacity-[0.03]">
+              <div className="absolute inset-0" style={{
+                backgroundImage: `radial-gradient(circle at 2px 2px, #3491ff 1px, transparent 0)`,
+                backgroundSize: '32px 32px'
+              }}></div>
+            </div>
+
+            {/* Decorative gradient orbs */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-purple-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
+
+            <div className="relative grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+              {/* Left Content */}
+              <div className="p-8 sm:p-10 md:p-12 lg:p-16">
+                <div className="space-y-6 sm:space-y-8">
+                  <div>
+                    <h2 
+                      className="text-3xl sm:text-4xl md:text-5xl font-grandh mb-4"
+                      style={{
+                        background: "linear-gradient(135deg, #3491ff, #0062ff)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        backgroundClip: "text",
+                      }}
+                    >
+                      Download Unifesto
+                    </h2>
+                    <p className="text-base sm:text-lg text-zinc-600 leading-relaxed">
+                      Your companion app for Beyond. Get updates, connect with peers, and access everything you need in one place.
+                    </p>
+                  </div>
+
+                  {/* Download Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.unifesto.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block transition-all duration-300 hover:scale-105 hover:drop-shadow-lg"
+                    >
+                      <Image
+                        src={GooglePlayBadge}
+                        alt="Get it on Google Play"
+                        className="h-12 sm:h-14 w-auto"
+                        priority
+                      />
+                    </a>
+                    <a
+                      href="https://apps.apple.com/app/unifesto-discover/id6767165496"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block transition-all duration-300 hover:scale-105 hover:drop-shadow-lg"
+                    >
+                      <Image
+                        src={AppStoreBadge}
+                        alt="Download on the App Store"
+                        className="h-12 sm:h-14 w-auto"
+                        priority
+                      />
+                    </a>
+                  </div>
+
+                  {/* Stats */}
+                  <div className="flex items-center gap-6 pt-4 border-t border-zinc-200">
+                    <div>
+                      <div className="text-2xl font-bold text-zinc-900">5K+</div>
+                      <div className="text-xs text-zinc-600">Downloads</div>
+                    </div>
+                    <div className="w-px h-8 bg-zinc-200"></div>
+                    <div>
+                      <div className="text-2xl font-bold text-zinc-900">4.8★</div>
+                      <div className="text-xs text-zinc-600">Rating</div>
+                    </div>
+                    <div className="w-px h-8 bg-zinc-200"></div>
+                    <div>
+                      <div className="text-2xl font-bold text-zinc-900">50+</div>
+                      <div className="text-xs text-zinc-600">Events</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Phone Mockup - 40% Hidden */}
+              <div className="relative h-[350px] sm:h-[400px] md:h-[450px] flex items-start justify-center overflow-hidden">
+                <div className="relative -mb-48 sm:-mb-56">
+                  {/* Glow effect behind phone */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-[4rem] blur-2xl scale-105"></div>
+                  
+                  {/* Phone Frame */}
+                  <div className="relative w-64 sm:w-72 h-[500px] sm:h-[550px] bg-zinc-900 rounded-[3rem] shadow-2xl border-[10px] border-zinc-800 overflow-hidden">
+                    {/* Notch */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-zinc-900 rounded-b-3xl z-10"></div>
+                    
+                    {/* Screen Content - App Screenshot */}
+                    <div className="h-full overflow-hidden">
+                      <Image
+                        src={AppScreen}
+                        alt="Unifesto Discover App"
+                        className="w-full h-full object-cover"
+                        priority
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Gradient fade at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white to-transparent pointer-events-none"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 md:py-32 bg-white w-full">
-        <div className="max-w-4xl mx-auto px-6 md:px-10 text-center w-full">
+      <section className="py-16 sm:py-20 md:py-32 bg-white">
+        <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-grandh mb-4 sm:mb-6 text-zinc-900">
             Ready to Go <span
               style={{
